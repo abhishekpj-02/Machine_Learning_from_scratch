@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Multiple input features
+# [Years of Experience, Number of Projects]
+X = np.array([
+    [1, 2],
+    [2, 3],
+    [3, 5],
+    [4, 6],
+    [5, 8]
+])
+
+# Output (Salary in thousands)
+y = np.array([25, 30, 40, 45, 55])
+
+# Create and train the model
+model = LinearRegression()
+model.fit(X, y)
+
+# Predict salary for new data
+# Example: 6 years experience, 10 projects
+new_data = np.array([[6, 10]])
+predicted_salary = model.predict(new_data)
+
+print("Predicted salary:", predicted_salary[0], "thousand")
+
+# Model coefficients
+print("Weights:", model.coef_)
+print("Bias:", model.intercept_)
