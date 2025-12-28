@@ -29,3 +29,6 @@ print("Predicted salary:", predicted_salary[0], "thousand")
 # Model coefficients
 print("Weights:", model.coef_)
 print("Bias:", model.intercept_)
+plt.scatter(X, y)          # Actual data
+plt.plot(X, model.predict(X))  # ML prediction line
+
